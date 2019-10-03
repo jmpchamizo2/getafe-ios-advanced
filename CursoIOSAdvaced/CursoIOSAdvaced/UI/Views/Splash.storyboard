@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Zz-Fb-TCf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="ZaO-K9-JIi">
+            <objects>
+                <viewController id="6Zz-Fb-TCf" customClass="SplashViewController" customModule="CursoIOSAdvaced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q1u-fl-qCl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pid-kY-adt">
+                                <rect key="frame" x="87" y="144" width="240" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="9FP-Q9-dn1"/>
+                                    <constraint firstAttribute="height" constant="200" id="Ckd-R0-C44"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ni-RU-aLw">
+                                <rect key="frame" x="87" y="444" width="240" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="OHV-UP-DrK"/>
+                                    <constraint firstAttribute="height" constant="200" id="izr-lQ-shK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pid-kY-adt" firstAttribute="centerX" secondItem="q1u-fl-qCl" secondAttribute="centerX" id="Xeo-2q-Df8"/>
+                            <constraint firstItem="Pid-kY-adt" firstAttribute="top" secondItem="2kG-lc-ycI" secondAttribute="top" constant="100" id="jg1-gq-FrY"/>
+                            <constraint firstItem="8Ni-RU-aLw" firstAttribute="top" secondItem="Pid-kY-adt" secondAttribute="bottom" constant="100" id="pIv-mr-Qqi"/>
+                            <constraint firstItem="8Ni-RU-aLw" firstAttribute="centerX" secondItem="q1u-fl-qCl" secondAttribute="centerX" id="qdr-Ug-ofr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2kG-lc-ycI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbc-uj-Hd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_logo" width="341.33334350585938" height="341.33334350585938"/>
+    </resources>
+</document>
