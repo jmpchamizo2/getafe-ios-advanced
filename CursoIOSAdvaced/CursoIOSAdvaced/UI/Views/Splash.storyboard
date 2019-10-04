@@ -16,9 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pid-kY-adt">
-                                <rect key="frame" x="87" y="144" width="240" height="200"/>
+                                <rect key="frame" x="107" y="144" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="9FP-Q9-dn1"/>
+                                    <constraint firstAttribute="width" constant="200" id="9FP-Q9-dn1"/>
                                     <constraint firstAttribute="height" constant="200" id="Ckd-R0-C44"/>
                                 </constraints>
                             </imageView>
@@ -33,13 +33,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="8Ni-RU-aLw" firstAttribute="centerX" secondItem="q1u-fl-qCl" secondAttribute="centerX" id="GUW-C1-ddI"/>
                             <constraint firstItem="Pid-kY-adt" firstAttribute="centerX" secondItem="q1u-fl-qCl" secondAttribute="centerX" id="Xeo-2q-Df8"/>
                             <constraint firstItem="Pid-kY-adt" firstAttribute="top" secondItem="2kG-lc-ycI" secondAttribute="top" constant="100" id="jg1-gq-FrY"/>
                             <constraint firstItem="8Ni-RU-aLw" firstAttribute="top" secondItem="Pid-kY-adt" secondAttribute="bottom" constant="100" id="pIv-mr-Qqi"/>
-                            <constraint firstItem="8Ni-RU-aLw" firstAttribute="centerX" secondItem="q1u-fl-qCl" secondAttribute="centerX" id="qdr-Ug-ofr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2kG-lc-ycI"/>
                     </view>
+                    <connections>
+                        <outlet property="mViewLoading" destination="8Ni-RU-aLw" id="S7q-bR-QB3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbc-uj-Hd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_logo" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="ic_logo" width="170.66667175292969" height="170.66667175292969"/>
     </resources>
 </document>

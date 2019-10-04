@@ -79,6 +79,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Y42-wT-z7f" id="EgW-wA-kfC"/>
+                        <outlet property="segment" destination="s0T-GY-ctM" id="66e-q8-LW6"/>
                         <outlet property="tableView" destination="quv-Rv-chH" id="XcO-nt-FWe"/>
                     </connections>
                 </viewController>
@@ -88,7 +89,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_selector_collection" width="16" height="16"/>
-        <image name="ic_selector_list" width="10.666666984558105" height="10.666666984558105"/>
+        <image name="ic_selector_collection" width="18.666666030883789" height="18.666666030883789"/>
+        <image name="ic_selector_list" width="18.666666030883789" height="18.666666030883789"/>
     </resources>
 </document>

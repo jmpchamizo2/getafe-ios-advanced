@@ -14,6 +14,7 @@ class UsersViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segment: UISegmentedControl!
     // MARK: - Properties
     private var cellSpacing: CGFloat = 16.0
     
@@ -94,3 +95,11 @@ extension UsersViewController: UICollectionViewDelegate, UICollectionViewDataSou
 }
 
 
+/**
+ Tenemos varios sitios para guardar datos:
+ - Flie: se guarda por defecto en la app pero puedes guardarlo donde quieras del móvil. En la app es algo más seguro
+ - UserDefatult: Guarda pares clave - valor y se elimina al borrar la app. Aqui guardaremos datos de configuración de la app.
+ - Keychain - es el lugar más seguro donde guardar datos, es del sistema. Guarda información segura del sistema, aún así es recomendable guardarlo encriptado. No se elimina cuando se elimina la app. Aqui guardaremos los datos privados del usuario y token de conexión con el servidor.
+ - Coredata: BBDD en nuestra aplicación, integrado en XCode.
+ - Databse externas: BBDD de terceros (Realm)
+ */
