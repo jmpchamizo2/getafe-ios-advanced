@@ -8,9 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9B9A603F281A9CAD8953C4E5 /* Pods_CursoIOSAdvaced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62BF73FB07ADB793BF5215 /* Pods_CursoIOSAdvaced.framework */; };
+		D95A4627234BAEC3007D62E3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A4626234BAEC3007D62E3 /* ApiManager.swift */; };
 		D9626857234797E40042542A /* loading_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D9626856234797E40042542A /* loading_animation.json */; };
 		D962685923479A770042542A /* loading_animation_2.json in Resources */ = {isa = PBXBuildFile; fileRef = D962685823479A770042542A /* loading_animation_2.json */; };
 		D962685B23479C040042542A /* loading_animation_3.json in Resources */ = {isa = PBXBuildFile; fileRef = D962685A23479C030042542A /* loading_animation_3.json */; };
+		D962685F2347B6900042542A /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962685E2347B6900042542A /* UserDAO.swift */; };
+		D96268632347BF170042542A /* UsersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268622347BF170042542A /* UsersDTO.swift */; };
+		D96268652347C12C0042542A /* InfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268642347C12C0042542A /* InfoDTO.swift */; };
+		D96268692347C4130042542A /* NameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268682347C4130042542A /* NameDTO.swift */; };
+		D962686B2347C4530042542A /* LocationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962686A2347C4530042542A /* LocationDTO.swift */; };
+		D962686D2347C5010042542A /* CoordinatesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962686C2347C5010042542A /* CoordinatesDTO.swift */; };
+		D962686F2347C58E0042542A /* StreetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962686E2347C58E0042542A /* StreetDTO.swift */; };
+		D96268712347C7990042542A /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268702347C7990042542A /* LoginDTO.swift */; };
+		D96268732347C7EC0042542A /* DobDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268722347C7EC0042542A /* DobDTO.swift */; };
+		D96268752347C83B0042542A /* RegisteredDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268742347C83B0042542A /* RegisteredDTO.swift */; };
+		D96268772347C8B00042542A /* PictureDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268762347C8B00042542A /* PictureDTO.swift */; };
+		D96268792347C9250042542A /* TimezoneDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96268782347C9250042542A /* TimezoneDTO.swift */; };
+		D962687B2347CB3A0042542A /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962687A2347CB3A0042542A /* UserDTO.swift */; };
+		D962687D2347CC9A0042542A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D962687C2347CC9A0042542A /* DataManager.swift */; };
 		D990FC6A23464B2D00134B44 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D990FC6923464B2D00134B44 /* Splash.storyboard */; };
 		D990FC6C2346512800134B44 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990FC6B2346512800134B44 /* UsersViewController.swift */; };
 		D990FC70234662B300134B44 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990FC6E234662B300134B44 /* PersonTableViewCell.swift */; };
@@ -18,6 +33,7 @@
 		D990FC76234665DB00134B44 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990FC75234665DB00134B44 /* UIView+Utils.swift */; };
 		D990FC792346684F00134B44 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990FC772346684F00134B44 /* PersonCollectionViewCell.swift */; };
 		D990FC7A2346684F00134B44 /* PersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D990FC782346684F00134B44 /* PersonCollectionViewCell.xib */; };
+		D992C3F6234B892C00096031 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992C3F5234B892C00096031 /* DatabaseManager.swift */; };
 		D9EFBD9F234523F5004625B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFBD9E234523F5004625B2 /* AppDelegate.swift */; };
 		D9EFBDA1234523F5004625B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFBDA0234523F5004625B2 /* SceneDelegate.swift */; };
 		D9EFBDA3234523F5004625B2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFBDA2234523F5004625B2 /* SplashViewController.swift */; };
@@ -28,9 +44,24 @@
 
 /* Begin PBXFileReference section */
 		D7A03EE67B477C6A3153C44D /* Pods-CursoIOSAdvaced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CursoIOSAdvaced.release.xcconfig"; path = "Target Support Files/Pods-CursoIOSAdvaced/Pods-CursoIOSAdvaced.release.xcconfig"; sourceTree = "<group>"; };
+		D95A4626234BAEC3007D62E3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		D9626856234797E40042542A /* loading_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation.json; sourceTree = "<group>"; };
 		D962685823479A770042542A /* loading_animation_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation_2.json; sourceTree = "<group>"; };
 		D962685A23479C030042542A /* loading_animation_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_animation_3.json; sourceTree = "<group>"; };
+		D962685E2347B6900042542A /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
+		D96268622347BF170042542A /* UsersDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDTO.swift; sourceTree = "<group>"; };
+		D96268642347C12C0042542A /* InfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDTO.swift; sourceTree = "<group>"; };
+		D96268682347C4130042542A /* NameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDTO.swift; sourceTree = "<group>"; };
+		D962686A2347C4530042542A /* LocationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDTO.swift; sourceTree = "<group>"; };
+		D962686C2347C5010042542A /* CoordinatesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesDTO.swift; sourceTree = "<group>"; };
+		D962686E2347C58E0042542A /* StreetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDTO.swift; sourceTree = "<group>"; };
+		D96268702347C7990042542A /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
+		D96268722347C7EC0042542A /* DobDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DobDTO.swift; sourceTree = "<group>"; };
+		D96268742347C83B0042542A /* RegisteredDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredDTO.swift; sourceTree = "<group>"; };
+		D96268762347C8B00042542A /* PictureDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDTO.swift; sourceTree = "<group>"; };
+		D96268782347C9250042542A /* TimezoneDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimezoneDTO.swift; sourceTree = "<group>"; };
+		D962687A2347CB3A0042542A /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		D962687C2347CC9A0042542A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D990FC6923464B2D00134B44 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		D990FC6B2346512800134B44 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D990FC6E234662B300134B44 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -38,6 +69,7 @@
 		D990FC75234665DB00134B44 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		D990FC772346684F00134B44 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		D990FC782346684F00134B44 /* PersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		D992C3F5234B892C00096031 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D9EFBD9B234523F5004625B2 /* CursoIOSAdvaced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursoIOSAdvaced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EFBD9E234523F5004625B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9EFBDA0234523F5004625B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +111,51 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D962685C2347B6690042542A /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				D962685D2347B6760042542A /* Models */,
+				D992C3F5234B892C00096031 /* DatabaseManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		D962685D2347B6760042542A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D962685E2347B6900042542A /* UserDAO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D96268602347BEF10042542A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D95A4626234BAEC3007D62E3 /* ApiManager.swift */,
+				D96268612347BEFB0042542A /* Models */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D96268612347BEFB0042542A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D96268622347BF170042542A /* UsersDTO.swift */,
+				D962687A2347CB3A0042542A /* UserDTO.swift */,
+				D96268642347C12C0042542A /* InfoDTO.swift */,
+				D96268682347C4130042542A /* NameDTO.swift */,
+				D962686A2347C4530042542A /* LocationDTO.swift */,
+				D962686C2347C5010042542A /* CoordinatesDTO.swift */,
+				D962686E2347C58E0042542A /* StreetDTO.swift */,
+				D96268702347C7990042542A /* LoginDTO.swift */,
+				D96268722347C7EC0042542A /* DobDTO.swift */,
+				D96268742347C83B0042542A /* RegisteredDTO.swift */,
+				D96268762347C8B00042542A /* PictureDTO.swift */,
+				D96268782347C9250042542A /* TimezoneDTO.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D9869F88234644610030CCBC /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +180,9 @@
 		D9869F8A2346448D0030CCBC /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D96268602347BEF10042542A /* Remote */,
+				D962685C2347B6690042542A /* Local */,
+				D962687C2347CC9A0042542A /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -306,13 +386,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D962686D2347C5010042542A /* CoordinatesDTO.swift in Sources */,
 				D9EFBDA3234523F5004625B2 /* SplashViewController.swift in Sources */,
 				D990FC70234662B300134B44 /* PersonTableViewCell.swift in Sources */,
 				D990FC6C2346512800134B44 /* UsersViewController.swift in Sources */,
+				D96268772347C8B00042542A /* PictureDTO.swift in Sources */,
+				D962686F2347C58E0042542A /* StreetDTO.swift in Sources */,
+				D962685F2347B6900042542A /* UserDAO.swift in Sources */,
+				D96268632347BF170042542A /* UsersDTO.swift in Sources */,
+				D96268652347C12C0042542A /* InfoDTO.swift in Sources */,
+				D96268712347C7990042542A /* LoginDTO.swift in Sources */,
 				D9EFBD9F234523F5004625B2 /* AppDelegate.swift in Sources */,
+				D962687B2347CB3A0042542A /* UserDTO.swift in Sources */,
+				D992C3F6234B892C00096031 /* DatabaseManager.swift in Sources */,
+				D962686B2347C4530042542A /* LocationDTO.swift in Sources */,
 				D990FC76234665DB00134B44 /* UIView+Utils.swift in Sources */,
 				D990FC792346684F00134B44 /* PersonCollectionViewCell.swift in Sources */,
+				D96268732347C7EC0042542A /* DobDTO.swift in Sources */,
 				D9EFBDA1234523F5004625B2 /* SceneDelegate.swift in Sources */,
+				D96268692347C4130042542A /* NameDTO.swift in Sources */,
+				D96268792347C9250042542A /* TimezoneDTO.swift in Sources */,
+				D95A4627234BAEC3007D62E3 /* ApiManager.swift in Sources */,
+				D962687D2347CC9A0042542A /* DataManager.swift in Sources */,
+				D96268752347C83B0042542A /* RegisteredDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
