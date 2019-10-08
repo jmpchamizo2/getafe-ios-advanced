@@ -15,40 +15,108 @@ class DataManager {
     private init(){}
     
     
-    func users(completion: ServiceCompletion){
-        let users = usersDB()
-        if users.count > 0 {
-            //devolver userDB
-            completion(.success(data: users))
-        } else {
-            //llamar al servicio y guardar usuarios en bbdd
-            usersForceUpadate(completion: completion)
-        }
-    }
-    
-    func usersForceUpadate(completion: ServiceCompletion){
-        //llamar al servicio para obtener nuevos usuarios
-        ApiManager.shared.fetchUsers (){ result in
-            switch result {
-            case .success(let data):
-                guard let users = data as? UsersDTO else {
-                    completion(.failure(msg: "Mensaje error generíco"))
-                    return
+    func users(completion: @escaping ServiceCompletion){
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            if let usersDAO = self?.usersDB(), usersDAO.count > 0 {
+                //devolver userDB
+                let usersView = self?.usersDAOToUsersView(usersDAO)
+                DispatchQueue.main.async {
+                    completion(.success(data: usersView))
                 }
-                //Eliminiar todos los usuarios de la base de datos
-                DatabaseManager.shared.deleteAll()
-                //Guardar ususairo en la base de datos
-                save(users: users)
-            case .failure(let msg):
-                print("Fallo al obtener usuarios del servicio: \(msg)")
-                completion(.failure(msg: msg))
+            } else {
+                //llamar al servicio y guardar usuarios en bbdd
+                DispatchQueue.main.async {
+                    self?.usersForceUpadate(completion: completion)
+                }
             }
         }
     }
     
-    func user(id: String) -> UserDAO? {
-        return DatabaseManager.shared.user(id: id)
+    private func usersDAOToUsersView(_ usersDAO: Array<UserDAO>) -> Array<UserView>{
+        return usersDAO.compactMap { userDAO in
+            return self.userDaoToUserView(userDAO)
+        }
     }
+    
+    private func usersDTOToUsersView(_ usersDTO: Array<UserDTO>) -> Array<UserView>{
+        return usersDTO.compactMap { userDTO in
+            return self.userDTOToUserView(userDTO)
+        }
+    }
+    
+    func usersForceUpadate(completion: @escaping ServiceCompletion){
+        //llamar al servicio para obtener nuevos usuarios
+        DispatchQueue.global(qos: .background).async {
+            ApiManager.shared.fetchUsers (){ [weak self] result in
+                switch result {
+                case .success(let data):
+                    guard let users = data as? UsersDTO else {
+                        DispatchQueue.main.async {
+                            completion(.failure(msg: "Mensaje error generíco"))
+                        }
+                        return
+                    }
+                    //Eliminiar todos los usuarios de la base de datos
+                    DatabaseManager.shared.deleteAll()
+                    //Guardar ususairo en la base de datos
+                    self?.save(users: users)
+                    guard let usersDTO = users.users else {
+                        completion(.failure(msg: "No podemos tenemos UsersDTO"))
+                        return
+                    }
+                    let usersView = self?.usersDTOToUsersView(usersDTO)
+                    DispatchQueue.main.async {
+                        completion(.success(data: usersView))
+                    }
+                case .failure(let msg):
+                    print("Fallo al obtener usuarios del servicio: \(msg)")
+                    DispatchQueue.main.async {
+                        completion(.failure(msg: msg))
+                    }
+                }
+            }
+        }
+    }
+    
+    func user(by id: String, completion: @escaping ServiceCompletion) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let userDAO = DatabaseManager.shared.user(by: id) else {
+                DispatchQueue.main.async {
+                    completion(.failure(msg: "No existe usuario"))
+                }
+                return
+            }
+            let userView = self?.userDaoToUserView(userDAO)
+            DispatchQueue.main.async {
+                completion(.success(data: userView))
+            }
+        }
+    }
+    
+    
+    private func userDaoToUserView(_ userDAO: UserDAO) -> UserView {
+        return  UserView(id: userDAO.uuid,
+                         avatar: userDAO.avatar,
+                         firstName: userDAO.firstName,
+                         lastName: userDAO.lastName,
+                         email: userDAO.email,
+                         country: userDAO.country,
+                         birthdate: userDAO.birthdate,
+                         nationality: nil)
+    }
+    
+    private func userDTOToUserView(_ userDTO: UserDTO) -> UserView {
+        return  UserView(id: userDTO.login?.uuid,
+                         avatar: userDTO.picture?.large,
+                         firstName: userDTO.name?.first,
+                         lastName: userDTO.name?.last,
+                         email: userDTO.email,
+                         country: userDTO.location?.country,
+                         birthdate: userDTO.dob?.date,
+                         nationality: nil)
+    }
+    
+    
     
     private func usersDB() -> Array<UserDAO> {
         return Array(DatabaseManager.shared.users())

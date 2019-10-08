@@ -30,7 +30,7 @@ class DatabaseManager {
         return realm.objects(UserDAO.self)
     }
     
-    func user(id: String) -> UserDAO? {
+    func user(by id: String) -> UserDAO? {
         return realm.object(ofType: UserDAO.self, forPrimaryKey: id)
     }
     
@@ -38,8 +38,8 @@ class DatabaseManager {
         realm.deleteAll()
     }
     
-    func delete(id: String) {
-        guard let userToDelete = user(id: id) else {
+    func delete(by id: String) {
+        guard let userToDelete = user(by: id) else {
             return
         }
         try! realm.write {
