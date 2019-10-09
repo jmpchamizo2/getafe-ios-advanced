@@ -35,6 +35,7 @@
 		D990FC7A2346684F00134B44 /* PersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D990FC782346684F00134B44 /* PersonCollectionViewCell.xib */; };
 		D992C3F6234B892C00096031 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D992C3F5234B892C00096031 /* DatabaseManager.swift */; };
 		D9A6F6B0234CEEAA004EAC29 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A6F6AF234CEEAA004EAC29 /* UserView.swift */; };
+		D9AF3451234E51E2009CB1B6 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D9AF3450234E51E2009CB1B6 /* users.json */; };
 		D9EFBD9F234523F5004625B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFBD9E234523F5004625B2 /* AppDelegate.swift */; };
 		D9EFBDA1234523F5004625B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFBDA0234523F5004625B2 /* SceneDelegate.swift */; };
 		D9EFBDA3234523F5004625B2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFBDA2234523F5004625B2 /* SplashViewController.swift */; };
@@ -72,6 +73,7 @@
 		D990FC782346684F00134B44 /* PersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCollectionViewCell.xib; sourceTree = "<group>"; };
 		D992C3F5234B892C00096031 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D9A6F6AF234CEEAA004EAC29 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		D9AF3450234E51E2009CB1B6 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
 		D9EFBD9B234523F5004625B2 /* CursoIOSAdvaced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursoIOSAdvaced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EFBD9E234523F5004625B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9EFBDA0234523F5004625B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		D9869F89234644840030CCBC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9AF3450234E51E2009CB1B6 /* users.json */,
 				D962685A23479C030042542A /* loading_animation_3.json */,
 				D962685823479A770042542A /* loading_animation_2.json */,
 				D9626856234797E40042542A /* loading_animation.json */,
@@ -347,6 +350,7 @@
 				D9EFBDAB23452405004625B2 /* LaunchScreen.storyboard in Resources */,
 				D990FC7A2346684F00134B44 /* PersonCollectionViewCell.xib in Resources */,
 				D9EFBDA823452405004625B2 /* Assets.xcassets in Resources */,
+				D9AF3451234E51E2009CB1B6 /* users.json in Resources */,
 				D9626857234797E40042542A /* loading_animation.json in Resources */,
 				D9EFBDA6234523F5004625B2 /* Main.storyboard in Resources */,
 				D990FC6A23464B2D00134B44 /* Splash.storyboard in Resources */,

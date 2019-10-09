@@ -23,16 +23,38 @@ class ApiManager {
     static let shared = ApiManager()
     private init(){}
     
+    
     // MARK: - Properties
     private let numUsers: Int = 100
     
     func fetchUsers(completion: ServiceCompletion) {
         //Llamar al servicio
-        
+        do {
+            guard let url = Bundle.main.url(forResource: "users", withExtension: "json") else {
+                return
+            }
+            let decoder = JSONDecoder()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat =  "yyyy-MM-dd'T'HH:mm:ssZ"
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let data = try Data(contentsOf: url)
+            let usersDTO = try decoder.decode(UsersDTO.self, from: data)
+            usersDTO.users?.forEach { user in
+                debugPrint(user.name ?? "No encuentra nombre")
+            }
+            completion(.success(data: usersDTO.users))
+        }
+        catch {
+            print(error)
+        }
         //Devolver datos
-        completion(.success(data: "Bieeeeenn"))
-        
+  
     }
     
-    
+
 }
+    
+
+
+
+        

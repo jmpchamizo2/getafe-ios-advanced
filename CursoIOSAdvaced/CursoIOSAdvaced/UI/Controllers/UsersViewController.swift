@@ -17,17 +17,33 @@ class UsersViewController: UIViewController {
     @IBOutlet weak var segment: UISegmentedControl!
     // MARK: - Properties
     private var cellSpacing: CGFloat = 16.0
-    
+    private var users: Array<UserView> = []
     
     
     // MARK: - Live Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadUsers()
     }
-
     
-
+    private func loadUsers() {
+        DataManager.shared.users { [weak self] result in
+            switch result {
+            case .success(let data):
+                guard let users = data as? Array<UserView>  else {
+                    return
+                }
+                self?.users = users
+                self?.configure(collectionView: self!.collectionView)
+            case .failure(let msg):
+                debugPrint(msg)
+            }
+        }
+    }
 }
+
+
+
 
 // MARK: - Extension TableView methods
 extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
@@ -39,7 +55,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +81,7 @@ extension UsersViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return users.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,8 +89,12 @@ extension UsersViewController: UICollectionViewDelegate, UICollectionViewDataSou
                                                             for: indexPath) as? PersonCollectionViewCell else {
             return UICollectionViewCell()
         }
-
         
+        if (indexPath.row < users.count) {
+            let user = users[indexPath.row]
+            cell.configureCell(image: user.avatar,
+                               title: user.name)
+        }
         return cell
     }
     
@@ -93,6 +113,8 @@ extension UsersViewController: UICollectionViewDelegate, UICollectionViewDataSou
                       height: size)
     }
 }
+
+
 
 
 /**

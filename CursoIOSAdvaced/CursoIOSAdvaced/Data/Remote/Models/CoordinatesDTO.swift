@@ -10,6 +10,6 @@ import Foundation
 
 
 struct CoordinatesDTO: Codable {
-    let latitude: Double?
-    let longitude: Double?
+    let latitude: String?
+    let longitude: String?
 }

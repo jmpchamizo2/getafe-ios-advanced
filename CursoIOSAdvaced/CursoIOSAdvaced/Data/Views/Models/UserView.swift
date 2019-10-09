@@ -18,8 +18,12 @@ class UserView {
     let birthdate: Date?
     let nationality: String?
     
-    var name: String{
-        return "\(String(describing: firstName)) \(String(describing:lastName))"
+    var name: String {
+        guard let first = firstName,
+            let last = lastName else {
+                return "Sin nombre"
+        }
+        return "\(first) \(last)"
     }
     
     var age: Int{

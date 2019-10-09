@@ -102,7 +102,7 @@ class DataManager {
                          email: userDAO.email,
                          country: userDAO.country,
                          birthdate: userDAO.birthdate,
-                         nationality: nil)
+                         nationality: userDAO.nationality)
     }
     
     private func userDTOToUserView(_ userDTO: UserDTO) -> UserView {
@@ -113,7 +113,7 @@ class DataManager {
                          email: userDTO.email,
                          country: userDTO.location?.country,
                          birthdate: userDTO.dob?.date,
-                         nationality: nil)
+                         nationality: userDTO.nat)
     }
     
     
